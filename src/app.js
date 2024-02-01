@@ -153,7 +153,7 @@ socketServer.on("connection", socket => {
 
     socket.on("newEmail", async({email, comment}) => {
         let result = await transport.sendMail({
-            from:'Chat Correo <shirleytique911@gmail.com>',
+            from:'Chat Correo <lorenatique911@gmail.com>',
             to:email,
             subject:'Correo con Socket y Nodemailer',
             html:`
@@ -293,11 +293,17 @@ app.post('/forgot-password', async (req, res) => {
     const resetLink = `http://localhost:8080/reset-password?token=${token}`;
   
     let result = transport.sendMail({
-        from:'<shirleytique911@gmail.com>',
+        from:'<lorenatique911@gmail.com>',
         to:email,
         subject:'Restablecer contraseña',
-        html:`Haz clic en el siguiente enlace para restablecer tu contraseña: <a href="${resetLink}">Restablecer contraseña</a>`,
-        attachments:[]
+        html:`Haz clic en el siguiente enlace para restablecer tu contraseña:<div> <a href="${resetLink}">Restablecer contraseña</a></div>`,
+       
+        attachments:[{
+            filename:"pizarraBAR.png",
+            path:__dirname+"./imagenes/pizarraBAR.png",
+            cid:"pizarra BAR.png"
+
+        }]
     })
     if(result)
     {
