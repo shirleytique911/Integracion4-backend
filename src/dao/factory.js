@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 import config from '../config/config.js'
-export class Carts {}
-export class Products {}
-export class Users {}
-export class Tickets {}
+export let Carts
+export let Products
+export let Users
+export let Tickets
 switch (config.persistence) {
     case "MONGO":
-        const connection = mongoose.connect(config.mongo_url)
+        const connection = mongoose.connect('config.mongo_url')
         const { default: CartsMongo } = await import('./mongo/carts.mongo.js')
         const { default: ProductsMongo } = await import('./mongo/products.mongo.js')
         const { default: UsersMongo } = await import('./mongo/users.mongo.js')

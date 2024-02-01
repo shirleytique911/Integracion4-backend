@@ -8,7 +8,7 @@ const ticketSchema = new mongoose.Schema({
     amount: Number,
     purchaser: String,
 })
-
 const ticketsModel = mongoose.model(ticketsCollection, ticketSchema)
+// const ticketsModel = mongoose.model(`ticket`, ticketSchema)
 
 export default ticketsModel

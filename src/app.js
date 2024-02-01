@@ -1,5 +1,5 @@
 import express from 'express'
-import mongoose from 'mongoose'
+import mongoose, { mongo } from 'mongoose'
 import config from './config/config.js'
 import passport from "passport"
 import cookieParser from "cookie-parser"
@@ -153,7 +153,7 @@ socketServer.on("connection", socket => {
 
     socket.on("newEmail", async({email, comment}) => {
         let result = await transport.sendMail({
-            from:'Chat Correo <bast.s.rojas@gmail.com>',
+            from:'Chat Correo <shirleytique911@gmail.com>',
             to:email,
             subject:'Correo con Socket y Nodemailer',
             html:`
