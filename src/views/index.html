@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    .body-login {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+    }
+
+    .h1-login {
+        color: #333;
+    }
+
+    /* Estilos para los campos de entrada y botones */
+    input[type="text"],
+    input[type="password"],
+    button {
+        margin: 10px;
+        padding: 8px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Estilos para el enlace de registro */
+    .registrar {
+        display: block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .registrar:hover {
+        text-decoration: underline;
+    }</style>
 </head>
-<body>
-    <h1>Login</h1>
+<body class="body-login ">
+    <h1 class="h1-login">Login</h1>
     <form id="loginForm">
         <input type="text" name="email" id="email" placeholder="Ingrese Email">
         <input type="password" name="password" id="password" placeholder="Ingrese Password">
@@ -14,7 +57,8 @@
         <button type="button" id="forgotPasswordButton">Recuperar Contraseña</button>
         <label id="lblRecuperacion"></label>
     </form>
-    <a href="/register">Registrarse</a>
+    <a class="regstrar nuevo " href="/register">Registrarse</a>
+    
     <script src="/login.js"></script>
 </body>
 </html>
